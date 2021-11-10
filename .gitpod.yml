@@ -1,0 +1,26 @@
+tasks:
+  - name: workshop-astra-tik-tok
+    before: |
+      cd /workspace/workshop-astra-tik-tok 
+      nvm install 16.13.0
+      npm install -g npm@latest
+      npm install -g netlify-cli
+      npm install
+    command: |
+      echo "workshop-astra-tik-tok gitpod ready - LET'S DO THIS!"
+      gp open README.md
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: true
+    addComment: false
+    addBadge: true
+    addLabel: false
+ports:
+  - port: 8888
+    onOpen: open-preview
+  - port: 3000
+    onOpen: ignore    
